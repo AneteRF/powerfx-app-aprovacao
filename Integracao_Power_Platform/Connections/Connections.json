@@ -1,0 +1,27 @@
+{
+  "c1fe45fe-cfe8-483f-9ac4-2726a0e0753b": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/shgogna/globalperconnector-train1/1.0.1639.3310/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://rbadigital.sharepoint.com/sites/AneteRF": {
+        "dataSources": {
+          "TbSolicitacoesProjeto": {
+            "tableName": "e50584c6-3dbc-4a9f-8c97-c9d6c663350e"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "TbSolicitacoesProjeto"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "c1fe45fe-cfe8-483f-9ac4-2726a0e0753b"
+  }
+}

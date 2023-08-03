@@ -1,0 +1,190 @@
+TelaMenu As screen:
+
+    Label1 As label:
+        Color: =RGBA(168, 0, 0, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =97
+        Size: =30
+        Text: ="LISTA DE SOLICITAÇÃO DE MATERIEL E STATUS"
+        Width: =1090
+        X: =24
+        ZIndex: =1
+
+    "galSolicitacaoAprove As gallery.'BrowseLayout_Vertical_OneImageThreeColumnVariant_ver5.0'":
+        DelayItemLoading: =true
+        Height: =596
+        Items: =TbSolicitacoesProjeto
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =4
+        TemplateSize: =257
+        Width: =1358
+        WrapCount: =3
+        X: =8
+        Y: =172
+        ZIndex: =1
+
+        lblMaterial As label:
+            Color: =RGBA(168, 0, 0, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =52
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Title
+            Width: =287
+            X: =6
+            Y: =15
+            ZIndex: =2
+
+        shpDivideAprove As rectangle:
+            Fill: =RGBA(238, 204, 204, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =416
+            X: =12
+            Y: =66
+            ZIndex: =3
+
+        shpAprove As rectangle:
+            Fill: |-
+                =Switch(
+                    ThisItem.Aprovar,
+                    "Yes",
+                    RGBA(99, 139, 44, 1),
+                    "No",
+                    RGBA(168, 0, 0, 1),
+                    "Pending",
+                    RGBA(221, 79, 14, 1),
+                    RGBA(99, 139, 44, 1))
+            Height: =18
+            OnSelect: =Select(Parent)
+            Width: =416
+            X: =12
+            Y: =234
+            ZIndex: =4
+
+        Label4 As label:
+            Height: =43
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Tipo: " & ThisItem.TipoProjeto
+            Width: =226
+            X: =12
+            Y: =67
+            ZIndex: =6
+
+        Label5 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Data: "&ThisItem.DataPedido
+            X: =278
+            Y: =70
+            ZIndex: =7
+
+        Label6 As label:
+            Height: =62
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Solicitante: " & ThisItem.Solicitante
+            Width: =248
+            X: =12
+            Y: =110
+            ZIndex: =8
+
+        Label7 As label:
+            Height: =62
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Dias Estimados: "&ThisItem.DiasEstimados
+            X: =278
+            Y: =110
+            ZIndex: =9
+
+        Label8 As label:
+            OnSelect: =Select(Parent)
+            Text: |-
+                ="Status: "&ThisItem.Aprovar
+            X: =12
+            Y: =178
+            ZIndex: =10
+
+        Icon3 As icon.Trash:
+            Color: =RGBA(118, 0, 0, 1)
+            Height: =40
+            Icon: =Icon.Trash
+            OnSelect: =Select(Parent)
+            Width: =51
+            X: =293
+            Y: =15
+            ZIndex: =11
+
+        Icon4 As icon.Edit:
+            Color: =RGBA(118, 0, 0, 1)
+            Height: =40
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Set(varItemEdit, ThisItem);
+                Navigate(TelaEdit)
+            Width: =36
+            X: =352
+            Y: =15
+            ZIndex: =12
+
+        Icon8 As icon.ChevronRight:
+            Color: =RGBA(118, 0, 0, 1)
+            Height: =40
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(varItem, ThisItem);
+                Navigate(TelaDetalhe)
+            Width: =32
+            X: =396
+            Y: =15
+            ZIndex: =13
+
+    TextInput1 As text:
+        BorderColor: =RGBA(168, 0, 0, 1)
+        Color: =RGBA(168, 0, 0, 1)
+        Default: ="🔍 Buscar Solicitação"
+        Height: =62
+        Size: =18
+        Width: =492
+        X: =118
+        Y: =110
+        ZIndex: =2
+
+    Icon1 As icon.Filter:
+        Color: =RGBA(118, 0, 0, 1)
+        Height: =62
+        Icon: =Icon.Filter
+        X: =36
+        Y: =110
+        ZIndex: =3
+
+    Image2 As image:
+        Height: =174
+        Image: ='Power-Platform-transformed'
+        Width: =252
+        X: =1114
+        ZIndex: =4
+
+    Button1 As button:
+        DisabledBorderColor: =RGBA(118, 0, 0, 1)
+        Fill: =RGBA(118, 0, 0, 1)
+        Height: =62
+        HoverFill: =RGBA(118, 0, 0, 1)
+        OnSelect: =Navigate(TelaSolicitacao)
+        Text: ="Nova Solicitação"
+        Width: =299
+        X: =705
+        Y: =110
+        ZIndex: =5
+
+    Icon5 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =51
+        Icon: =Icon.Add
+        Width: =51
+        X: =712
+        Y: =115
+        ZIndex: =6
+
